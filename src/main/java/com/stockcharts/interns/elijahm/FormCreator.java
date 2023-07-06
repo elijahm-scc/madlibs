@@ -14,6 +14,7 @@ public class FormCreator {
         Map<String, String> formFields = new HashMap<>();
         for (Map.Entry<String, Integer> entry : fieldCounts.entrySet()) {
             String fieldName = entry.getKey();
+            if (fieldName.startsWith("story")) continue;
             int fieldCount = entry.getValue();
             StringBuilder fieldHtml = new StringBuilder();
             for (int i = 1; i <= fieldCount; i++) {
@@ -29,6 +30,7 @@ public class FormCreator {
         }
 
         dataModel.put("formFields", formFields);
+        dataModel.put("storyid", ""+fieldCounts.get("storyid"));
 
         
         try {  

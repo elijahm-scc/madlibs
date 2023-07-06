@@ -1,4 +1,4 @@
-<form action="/madlibs" method="post">
+<form action="/madlibs?cmd=view&storyid=${storyid}" method="post">
     <#list formFields?keys as fieldName> 
         ${formFields[fieldName]}
     </#list>
